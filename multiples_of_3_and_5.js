@@ -32,3 +32,18 @@ assert.deepEqual(filterMultiples(generateSequence(9)),
                                      return v;
                                    }
                                  }));
+
+function sumMultiples(arr=generateSequence()) {
+  let out = [];
+  out = arr.reduce((a, b) => a + b);
+  return out;
+}
+assert.deepEqual(sumMultiples(generateSequence(9)), expectation.slice(0, 9)
+                                                    .reduce((a, b) => a + b));
+assert.deepEqual(sumMultiples(filterMultiples(generateSequence(9))), 23);
+assert.deepEqual(sumMultiples(filterMultiples(generateSequence(1000-1))),
+                 generateSequence(1000-1).filter(v => {
+                   if (v % 3 === 0 || v % 5 === 0) {
+                     return v;
+                   }
+                 }).reduce((a, b) => a + b));
