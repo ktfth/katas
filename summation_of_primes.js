@@ -18,3 +18,4 @@ function primes(n) {
   return primes;
 }
 console.log(primes(10).slice(0, 4).reduce((a, b) => a + b));
+console.log(primes(2000000).slice(0, 4).reduce((a, b) => a + b));
