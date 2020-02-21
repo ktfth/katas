@@ -28,4 +28,4 @@ function fn(x) {
   return Math.pow(x, 3) - 2 * x - 5;
 }
 
-console.log(bisection(fn, 1, 1000));
+console.log(bisection(fn, 1, 10));
