@@ -69,3 +69,26 @@ function insortLeft(sortedCollection, item, lo=0, hi=null) {
 assert.deepEqual(insortLeft([0, 5, 7, 10, 15], 6), [0, 5, 6, 7, 10, 15]);
 assert.deepEqual(insortLeft([0, 5, 7, 10, 15], 20), [0, 5, 7, 10, 15, 20]);
 assert.deepEqual(insortLeft([0, 5, 7, 10, 15], 15, 1, 3), [0, 5, 7, 15, 10, 15]);
+
+function insortRight(sortedCollection, item, lo=0, hi=null) {
+  let cache = sortedCollection.map(v => v);
+  let point = bisectRight(sortedCollection, item, lo, hi);
+  sortedCollection.splice(point, item, item);
+  if (point < cache.length && (!lo && !hi)) {
+    cache
+      .reverse()
+      .slice(0, point + 1)
+      .reverse()
+      .map(v => sortedCollection.push(v));
+  } if (point < cache.length && lo > 0 && hi > 0) {
+    cache
+      .reverse()
+      .slice(0, point - 1)
+      .reverse()
+      .map(v => sortedCollection.push(v));
+  }
+  return sortedCollection;
+}
+assert.deepEqual(insortRight([0, 5, 7, 10, 15], 6), [0, 5, 6, 7, 10, 15]);
+assert.deepEqual(insortRight([0, 5, 7, 10, 15], 20), [0, 5, 7, 10, 15, 20]);
+assert.deepEqual(insortRight([0, 5, 7, 10, 15], 15, 1, 3), [0, 5, 7, 15, 10, 15]);
