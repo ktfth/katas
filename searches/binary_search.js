@@ -128,22 +128,22 @@ assert.deepEqual(binarySearchLib([0, 5, 7, 10, 15], 15), 4);
 assert.deepEqual(binarySearchLib([0, 5, 7, 10, 15], 5), 1);
 assert.deepEqual(binarySearchLib([0, 5, 7, 10, 15], 6), -1);
 
-function binarySearchRecursion(sortedCollection, item, left, right) {
-  if (right < left) {
-    return -1;
-  }
-
-  let midpoint = Math.floor(left + (right - left) / 2);
-
-  if (sortedCollection[midpoint] === item) {
-    return midpoint;
-  } else if (sortedCollection[midpoint] > item) {
-    return binarySearchRecursion(sortedCollection, item, left, midpoint - 1);
-  } else {
-    return binarySearchRecursion(sortedCollection, item, midpoint + 1, right);
-  }
-}
-assert.deepEqual(binarySearchRecursion([0, 5, 7, 10, 15], 0), 0);
-assert.deepEqual(binarySearchRecursion([0, 5, 7, 10, 15], 15), 4);
-assert.deepEqual(binarySearchRecursion([0, 5, 7, 10, 15], 5), 1);
-assert.deepEqual(binarySearchRecursion([0, 5, 7, 10, 15], 6), -1);
+// function binarySearchRecursion(sortedCollection, item, left, right) {
+//   if (right < left) {
+//     return -1;
+//   }
+//
+//   let midpoint = Math.floor(left + (right - left) / 2);
+//
+//   if (sortedCollection[midpoint] === item) {
+//     return midpoint;
+//   } else if (sortedCollection[midpoint] > item) {
+//     return binarySearchRecursion(sortedCollection, item, left, midpoint - 1);
+//   } else {
+//     return binarySearchRecursion(sortedCollection, item, midpoint + 1, right);
+//   }
+// }
+// assert.deepEqual(binarySearchRecursion([0, 5, 7, 10, 15], 0), 0);
+// assert.deepEqual(binarySearchRecursion([0, 5, 7, 10, 15], 15), 4);
+// assert.deepEqual(binarySearchRecursion([0, 5, 7, 10, 15], 5), 1);
+// assert.deepEqual(binarySearchRecursion([0, 5, 7, 10, 15], 6), -1);
