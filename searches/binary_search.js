@@ -92,3 +92,26 @@ function insortRight(sortedCollection, item, lo=0, hi=null) {
 assert.deepEqual(insortRight([0, 5, 7, 10, 15], 6), [0, 5, 6, 7, 10, 15]);
 assert.deepEqual(insortRight([0, 5, 7, 10, 15], 20), [0, 5, 7, 10, 15, 20]);
 assert.deepEqual(insortRight([0, 5, 7, 10, 15], 15, 1, 3), [0, 5, 7, 15, 10, 15]);
+
+function binarySearch(sortedCollection, item) {
+  let left = 0;
+  let right = sortedCollection.length - 1;
+
+  while (left <= right) {
+    let midpoint = Math.floor(left + (right - left) / 2);
+    let currentItem = sortedCollection[midpoint];
+    if (currentItem === item) {
+      return midpoint;
+    } else if (item < currentItem) {
+      right = midpoint - 1
+    } else {
+      left = midpoint + 1;
+    }
+  }
+
+  return -1;
+}
+assert.deepEqual(binarySearch([0, 5, 7, 10, 15], 0), 0);
+assert.deepEqual(binarySearch([0, 5, 7, 10, 15], 15), 4);
+assert.deepEqual(binarySearch([0, 5, 7, 10, 15], 5), 1);
+assert.deepEqual(binarySearch([0, 5, 7, 10, 15], 6), -1);
