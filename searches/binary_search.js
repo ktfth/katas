@@ -22,3 +22,5 @@ function bisectLeft(sortedCollection, item, lo=0, hi=null) {
 assert.equal(bisectLeft([0, 5, 7, 10, 15], 0), 0);
 assert.equal(bisectLeft([0, 5, 7, 10, 15], 6), 2);
 assert.equal(bisectLeft([0, 5, 7, 10, 15], 20), 5);
+assert.equal(bisectLeft([0, 5, 7, 10, 15], 15, 1, 3), 3);
+assert.equal(bisectLeft([0, 5, 7, 10, 15], 6, 2), 2);
