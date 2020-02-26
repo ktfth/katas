@@ -8,7 +8,7 @@ function fibonacciSearch(arr, val) {
   let fibNext = fibN1 + fibN2;
   let length = arr.length;
   if (length === 0) {
-    return 0;
+    return -1;
   }
   while (fibNext < arr.length) {
     fibN2 = fibN1;
@@ -38,4 +38,4 @@ function fibonacciSearch(arr, val) {
 }
 assert.equal(fibonacciSearch([1, 6, 7, 0, 0], 6), 1);
 assert.equal(fibonacciSearch([1, -1, 5, 2, 9], 10), -1);
-assert.equal(fibonacciSearch([], 9), 0);
+assert.equal(fibonacciSearch([], 9), -1);
