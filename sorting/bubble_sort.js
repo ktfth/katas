@@ -9,7 +9,7 @@ function swap(arr, i, j) {
 }
 
 function bubbleSort(arr) {
-  var swapped;
+  let swapped;
   do {
     swapped = false;
     for (let i = 0; i < arr.length; i += 1) {
