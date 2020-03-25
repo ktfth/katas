@@ -2,4 +2,4 @@
 
 ## Description
 
-Code practice
+Solutions based on The Algorithm, Project Euler and Interview preparation.
